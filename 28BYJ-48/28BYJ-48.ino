@@ -11,13 +11,20 @@ IN4                 11
 GND                 GND
 */
 
+// Include Stepper Library
+#include <Stepper.h>
+
+// Number of steps per rotation
+const int steps = 2038;
+
+// Pin sequence
+Stepper Stepper_Motor = Stepper(steps,8,9,10,11);
 
 void setup() {
-  // put your setup code here, to run once:
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  Stepper_Motor.setSpeed(15);
+  Stepper_Motor.step(steps);
 }
